@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: run test
-        uses: mike-neck/action-pixela-increment
+        uses: mike-neck/action-pixela-increment@master
         with:
           user: mike-neck-hatenadiary-com
           graph-id: gh-action-test
