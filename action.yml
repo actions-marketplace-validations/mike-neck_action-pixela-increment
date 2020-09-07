@@ -14,6 +14,7 @@ runs:
   using: composite
   steps:
     - name: increment pixel
+      shell: bash
       run: |
         curl -X PUT "https://pixe.la/v1/users/${USER}/graphs/${GRAPH}/increment" \
           --header "X-USER-TOKEN: ${TOKEN}" \
