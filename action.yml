@@ -1,0 +1,21 @@
+name: 'pixela-increment'
+description: 'increments pixela pixel'
+inputs:
+  token:
+    description: pixela user token
+    required: true
+  user:
+    description: pixela user
+    required: true
+  graph-id:
+    description: pixela graph id
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: increment pixel
+      run: |
+        curl -X PUT "https://pixe.la/v1/users/${USER}/graphs/${GRAPH}/increment" \
+          --header "X-USER-TOKEN: ${TOKEN}" \
+          --header 'content-length: 0' | \
+        python3 -m json.tool
