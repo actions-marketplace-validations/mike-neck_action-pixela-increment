@@ -1,5 +1,8 @@
 name: 'pixela-increment'
 description: 'increments pixela pixel'
+branding:
+  icon: arrow-up
+  color: green
 inputs:
   token:
     description: pixela user token
