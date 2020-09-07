@@ -16,7 +16,11 @@ runs:
     - name: increment pixel
       shell: bash
       run: |
-        curl -X PUT "https://pixe.la/v1/users/${USER}/graphs/${GRAPH}/increment" \
-          --header "X-USER-TOKEN: ${TOKEN}" \
+        curl -X PUT "https://pixe.la/v1/users/${PI_USER}/graphs/${PI_GRAPH}/increment" \
+          --header "X-USER-TOKEN: ${PI_TOKEN}" \
           --header 'content-length: 0' | \
         python3 -m json.tool
+      env:
+        PI_USER: ${{ inputs.user }}
+        PI_GRAPH: ${{ inputs.graph-id }}
+        PI_TOKEN: ${{ inputs.token }}
